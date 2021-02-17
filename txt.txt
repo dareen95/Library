@@ -1,0 +1,27 @@
+1- SELECT name, bio FROM authors
+
+Author::select('name', 'bio')->get();
+
+
+
+2- SELECT * FROM authors WHERE id > 2
+
+Author::where('id', '>', 2)->get();
+
+
+
+3-  SELECT name, bio FROM authors WHERE id > 2
+
+Author::select('name', 'bio')
+->where('id', '>', 2)
+->get();
+
+
+
+4-  SELECT name, bio FROM authors WHERE id > 2 ORDER BY id DESC limit 2
+
+Author::select('name', 'bio')
+->where('id', '>', 2)
+->orderBy('id', 'DESC')
+->take(2)
+->get();
